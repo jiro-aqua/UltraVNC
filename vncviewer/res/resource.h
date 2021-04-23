@@ -91,6 +91,7 @@
 #define ID_VK_LWINUP                    608
 #define ID_VK_RWINUP                    609
 #define ID_VK_APPSUP                    610
+#define ID_VK_GRAVEDOWN                 600		// GRAVE DOWN // added by jiro.aqua@gmail.com to use alt+` to server
 #define IDC_FINGER                      900
 #define IDC_HOSTNAME_EDIT               1000
 #define IDC_SHARED                      1001

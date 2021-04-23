@@ -7247,7 +7247,7 @@ void ClientConnection::UpdateStatusFields()
 void ClientConnection::GTGBS_CreateDisplay()
 {
 	// Das eigendliche HauptFenster erstellen,
-	// welches das VNC-Fenster und die Toolbar enthält
+	// welches das VNC-Fenster und die Toolbar enthä¬´
 	WNDCLASS wndclass;
 
 	wndclass.style			= 0;
@@ -7733,25 +7733,25 @@ LRESULT CALLBACK ClientConnection::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, 
 
 					case ID_VK_LWINDOWN:
 						if (_this->m_opts.m_ViewOnly) return 0;
-						_this->SendKeyEvent(XK_Super_L, true);
+						_this->SendKeyEvent(XK_Meta_L, true);
 						//adzm 2010-09
 						_this->FlushWriteQueue(true, 5);
 						return 0;
 					case ID_VK_LWINUP:
 						if (_this->m_opts.m_ViewOnly) return 0;
-						_this->SendKeyEvent(XK_Super_L, false);
+						_this->SendKeyEvent(XK_Meta_L, false);
 						//adzm 2010-09
 						_this->FlushWriteQueue(true, 5);
 						return 0;
 					case ID_VK_RWINDOWN:
 						if (_this->m_opts.m_ViewOnly) return 0;
-						_this->SendKeyEvent(XK_Super_R, true);
+						_this->SendKeyEvent(XK_Meta_R, true);
 						//adzm 2010-09
 						_this->FlushWriteQueue(true, 5);
 						return 0;
 					case ID_VK_RWINUP:
 						if (_this->m_opts.m_ViewOnly) return 0;
-						_this->SendKeyEvent(XK_Super_R, false);
+						_this->SendKeyEvent(XK_Meta_R, false);
 						//adzm 2010-09
 						_this->FlushWriteQueue(true, 5);
 						return 0;
@@ -7764,6 +7764,14 @@ LRESULT CALLBACK ClientConnection::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, 
 					case ID_VK_APPSUP:
 						if (_this->m_opts.m_ViewOnly) return 0;
 						_this->SendKeyEvent(XK_Menu, false);
+						//adzm 2010-09
+						_this->FlushWriteQueue(true, 5);
+						return 0;
+
+					case ID_VK_GRAVEDOWN:							// added by jiro.aqua@gmail.com to use alt+` to server
+						if (_this->m_opts.m_ViewOnly) return 0;
+						_this->SendKeyEvent(XK_grave, true);
+						_this->SendKeyEvent(XK_grave, false);
 						//adzm 2010-09
 						_this->FlushWriteQueue(true, 5);
 						return 0;

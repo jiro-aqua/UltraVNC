@@ -166,12 +166,13 @@ BOOL LowLevelHook::GetCurrentScrollLockState()
 // adzm 2009-09-25 - Different way to check the scroll lock state. Only query if we know it has changed.
 BOOL LowLevelHook::CheckScrollLock()
 {
-	if (g_fCheckScrollLock) {
-		g_fScrollLock = GetCurrentScrollLockState();
-		g_fCheckScrollLock = FALSE;
-	}
+	return true;
+//	if (g_fCheckScrollLock) {
+//		g_fScrollLock = GetCurrentScrollLockState();
+//		g_fCheckScrollLock = FALSE;
+//	}
 
-	return g_fScrollLock;
+//	return g_fScrollLock;
 }
 
 LRESULT CALLBACK LowLevelHook::VncLowLevelKbHookProc(INT nCode, WPARAM wParam, LPARAM lParam)
@@ -350,6 +351,17 @@ LRESULT CALLBACK LowLevelHook::VncLowLevelKbHookProc(INT nCode, WPARAM wParam, L
                                         }
                                 }
                                 break;
+
+
+								// added by jiro.aqua@gmail.com to use alt+` to server
+						case VK_KANJI:
+							if (CheckScrollLock()) {
+								if (fKeyDown)
+									PostMessage(g_hwndVNCViewer, WM_SYSCOMMAND, ID_VK_GRAVEDOWN, 0);
+
+								fHandled = TRUE;
+							}
+							break;
 
 
                         } //switch(pkbdllhook->vkCode)
