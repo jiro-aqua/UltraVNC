@@ -44,7 +44,7 @@ CTitleBar::CTitleBar()
 	Pin = nullptr;
 	Close = nullptr;
 	Maximize = nullptr;
-//	Minimize = nullptr;
+	Minimize = nullptr;
 	Screen = nullptr;
 	Photo = nullptr;
 	SwitchMonitor = nullptr;
@@ -70,7 +70,7 @@ CTitleBar::~CTitleBar()
 	if (Pin) DestroyWindow(Pin);
 	if (Close) DestroyWindow(Close);
 	if (Maximize) DestroyWindow(Maximize);
-//	if (Minimize) DestroyWindow(Minimize);
+	if (Minimize) DestroyWindow(Minimize);
 	if (m_hWnd) DestroyWindow(m_hWnd);
 	if (Screen) DestroyWindow(Screen);
 	if (Photo) DestroyWindow(Photo);
@@ -203,13 +203,13 @@ void CTitleBar::CreateDisplay()
 				nullptr);
 	
 	//Minimize button
-/*	Minimize=CreateWindow("STATIC",
+	Minimize=CreateWindow("STATIC",
 				"Minimize",
 				WS_CHILD | WS_VISIBLE | SS_NOTIFY | SS_OWNERDRAW,
                 tbWidth-tbRightSpace-(tbcxPicture*3)-(tbButtonSpace*2), tbTopSpace, tbcxPicture, tbcyPicture, m_hWnd,
 				(HMENU)tbIDC_MINIMIZE,
                 hInstance,
-				nullptr);*/
+				nullptr);
 
 	Screen=CreateWindow("STATIC",
 				"Screen",

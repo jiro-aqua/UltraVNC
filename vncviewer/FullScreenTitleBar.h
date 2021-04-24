@@ -88,7 +88,7 @@ private:
 	HWND Pin;
 	HWND Close;
 	HWND Maximize;
-	//HWND Minimize;
+	HWND Minimize;
 
 	HWND Screen;
 	HWND Photo;
