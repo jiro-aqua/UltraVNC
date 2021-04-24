@@ -333,7 +333,7 @@
       <Command>cl /nologo /MTd /Fo.\x64\Debug\ /Fd.\x64\Debug\ /c buildtime.cpp</Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>comctl32.lib;winmm.lib;ws2_32.lib;rdr.lib;libjpeg-turbo-win.lib;zlibstat.lib;liblzma.lib;omnithread.lib;zip32.lib;unz32lib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>comctl32.lib;winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
@@ -771,7 +771,7 @@ copy "$(OutDir)$(TargetName)$(TargetExt)" c:\uvnc\64\XP</Command>
       <Command>cl /nologo /MT /Fo.\x64\Release\ /Fd.\x64\Release\ /c buildtime.cpp</Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>comctl32.lib;winmm.lib;ws2_32.lib;rdr.lib;libjpeg-turbo-win.lib;zlibstat.lib;liblzma.lib;omnithread.lib;zip32.lib;unz32lib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>comctl32.lib;winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\vncviewer\x64\Release;..\winvnc\Release\x64\liblzma;..\winvnc\x64\Release;..\zlib\contrib\vstudio\vc15\x64\ZlibStatRelease;..\zipunzip_src\zip20\windll\visualc\lib\x64\Release;..\zipunzip_src\unzip\windll\vc6\lib\x64\Release;..\vncviewer\omnithread\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
