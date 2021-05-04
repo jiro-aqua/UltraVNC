@@ -4671,7 +4671,7 @@ inline void ClientConnection::ProcessMouseWheel(int delta)
   while (delta > 0) {
     SendPointerEvent(oldPointerX, oldPointerY, oldButtonMask | wheelMask);
     SendPointerEvent(oldPointerX, oldPointerY, oldButtonMask & ~wheelMask);
-    delta -= 120;
+    delta -= 20;		// hispeed for mac
   }
 }
 
